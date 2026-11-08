@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vult: Vivek Sama</title>
+<meta name="description" content="Vivek Sama: finance student at the University of Washington. Equity research, quantitative research and technology.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../index.html">Vivek Sama</a>
+    <nav class="site-nav" aria-label="Main"><a href="../index.html#work" aria-current="page">Work</a><a href="../about.html">About</a><a href="../experience.html">Experience</a></nav>
+  </div>
+</header>
+<main id="main">
+<article class="wrap case">
+  <p class="crumb"><a href="../index.html#work">All work</a></p>
+  <p class="kicker">Vult</p>
+  <h1>Testing trading strategies the way they would actually trade</h1>
+  <dl class="facts"><div><dt>Role</dt><dd>Co-founder</dd></div><div><dt>When</dt><dd>2026–present</dd></div><div><dt>Built with</dt><dd>OCaml, React, TypeScript</dd></div><div><dt>Status</dt><dd>In development; paper trading only</dd></div></dl>
+  <div class="measure">
+
+<h2>The question</h2>
+<p>Many backtests look profitable because they ignore what trading actually costs: fees, execution, position limits, and the gap between the data a strategy was tuned on and the data it wasn't. We wanted a platform that tells us when a strategy <em>doesn't</em> work.</p>
+
+<figure class="diagram"><svg viewBox="0 0 640 340" role="img" aria-labelledby="vult-svg-t">
+<title id="vult-svg-t">Vult architecture: market data flows through the journal, strategy engine, risk checks, paper execution and accounting. My work is the risk checks and the research frontend.</title>
+<defs><marker id="va" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path class="head" d="M0 0L10 5L0 10z"/></marker></defs>
+<rect class="group" x="6" y="8" width="628" height="204" rx="8"/>
+<text x="20" y="202" font-size="11.5" class="sub">OCaml core</text>
+<rect class="box" x="16" y="22" width="176" height="56" rx="6"/><text x="104" y="46" font-size="13" font-weight="600" text-anchor="middle">Market data</text><text x="104" y="64" font-size="11.5" class="sub" text-anchor="middle">Kraken order books</text>
+<rect class="box" x="232" y="22" width="176" height="56" rx="6"/><text x="320" y="46" font-size="13" font-weight="600" text-anchor="middle">Event journal</text><text x="320" y="64" font-size="11.5" class="sub" text-anchor="middle">every event, replayable</text>
+<rect class="box" x="448" y="22" width="176" height="56" rx="6"/><text x="536" y="46" font-size="13" font-weight="600" text-anchor="middle">Strategy engine</text><text x="536" y="64" font-size="11.5" class="sub" text-anchor="middle">signals and orders</text>
+<rect class="mine" x="448" y="122" width="176" height="56" rx="6"/><text x="536" y="146" font-size="13" font-weight="600" text-anchor="middle">Pre-trade risk checks</text><text x="536" y="164" font-size="11.5" class="sub" text-anchor="middle">three of them are mine</text>
+<rect class="box" x="232" y="122" width="176" height="56" rx="6"/><text x="320" y="146" font-size="13" font-weight="600" text-anchor="middle">Paper execution</text><text x="320" y="164" font-size="11.5" class="sub" text-anchor="middle">no live orders</text>
+<rect class="box" x="16" y="122" width="176" height="56" rx="6"/><text x="104" y="146" font-size="13" font-weight="600" text-anchor="middle">Accounting</text><text x="104" y="164" font-size="11.5" class="sub" text-anchor="middle">exact-decimal ledger</text>
+<path class="line" d="M192 50H230" marker-end="url(#va)"/>
+<path class="line" d="M408 50H446" marker-end="url(#va)"/>
+<path class="line" d="M536 78V120" marker-end="url(#va)"/>
+<path class="line" d="M448 150H410" marker-end="url(#va)"/>
+<path class="line" d="M232 150H194" marker-end="url(#va)"/>
+<rect class="mine" x="200" y="252" width="240" height="56" rx="6"/><text x="320" y="276" font-size="13" font-weight="600" text-anchor="middle">Research frontend</text><text x="320" y="294" font-size="11.5" class="sub" text-anchor="middle">React and TypeScript, built by me</text>
+<path class="dash" d="M320 252V214"/>
+<text x="330" y="238" font-size="11.5" class="sub">connection is the next step</text>
+<rect class="mine" x="16" y="322" width="12" height="12" rx="2"/><text x="34" y="332" font-size="11.5" class="sub">My work</text>
+<rect class="box" x="100" y="322" width="12" height="12" rx="2"/><text x="118" y="332" font-size="11.5" class="sub">Team's work</text>
+</svg></figure>
+
+<h2>What we built</h2>
+<ul>
+  <li><strong>Exact accounting.</strong> Cash, positions, prices and fees use exact-decimal arithmetic, so rounding errors can't quietly change a strategy's profit.</li>
+  <li><strong>Replayable history.</strong> Every market event and decision goes into an append-only journal, so any result can be replayed and audited.</li>
+  <li><strong>Paper trading only.</strong> Live order submission is blocked by design.</li>
+  <li><strong>Screening at scale.</strong> We tested strategies across 736 instruments and about 9.5 GB of historical Kraken data.</li>
+</ul>
+<p>The platform did its job by rejecting strategies. Several failed our criteria once costs were included. One momentum strategy, for example, turned its portfolio over about 156 times a year, and trading costs erased its returns.</p>
+
+<h2>My part</h2>
+<p>I helped shape the initial research and pushed for OCaml. Jane Street builds its trading systems in OCaml for a reason: its type system rejects invalid trading states before the code ever runs, so whole classes of costly bugs can't happen.</p>
+<p>I built three of the platform's pre-trade risk checks:</p>
+<table>
+  <thead><tr><th scope="col">Check</th><th scope="col">Risk it prevents</th><th scope="col">How it works</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Maximum-loss kill switch</strong></td><td>A losing strategy keeps trading</td><td>Tracks account equity against a baseline; past the limit, it blocks new orders and cancels open ones</td></tr>
+    <tr><td><strong>Order-size limits</strong></td><td>One oversized order creates outsized exposure</td><td>Caps each order's quantity and dollar value, with tighter limits per strategy</td></tr>
+    <tr><td><strong>Capital availability</strong></td><td>Two strategies spend the same cash</td><td>Before approving an order, checks free funds net of open orders and estimated fees</td></tr>
+  </tbody>
+</table>
+<p>I also built the entire research frontend: a React and TypeScript terminal with Dashboard, Strategies, and Activity &amp; Risk workspaces, dockable panels, and portfolio and performance charts.</p>
+<figure><div class="placeholder">Screenshot: Vult dashboard (to come)</div><figcaption>The research frontend's dashboard workspace.</figcaption></figure>
+
+<h2>Status</h2>
+<p><span class="status partly">The core engine and the frontend are built. Connecting them is the next step.</span> No real money has been traded.</p>
+
+<h2>What I learned</h2>
+<p>The most valuable thing a backtester can do is say no. A strategy that looks good before costs tells you very little. And a risk check is only as good as its failure mode: when in doubt, block the order.</p>
+<p class="note">Code available on request.</p>
+  </div>
+  <nav class="case-nav" aria-label="More case studies"><a class="next" href="nebius.html"><span>Next</span>Nebius Group</a></nav>
+</article>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <ul>
+      <li><a href="mailto:vsama@uw.edu">vsama@uw.edu</a></li>
+      <li><a href="https://www.linkedin.com/in/vivek-sama/">LinkedIn</a></li>
+      <li><a href="https://github.com/vivek-sama">GitHub</a></li>
+    </ul>
+    <p style="margin:0">© 2026 Vivek Sama</p>
+  </div>
+</footer>
+</body>
+</html>
