@@ -25,10 +25,25 @@
       <p class="kicker"><time datetime="2026-11-21">November 21, 2026</time></p>
       <h1>Anthropic&#8217;s IPO: Is the Growth Worth the Price?</h1>
       <p class="lede">Anthropic&#8217;s growth is real. The question is whether the business can earn enough to justify a $1.19 trillion market cap and $900.9 billion in commitments.</p>
+      <p class="byline">By Vivek Sama <span>5-minute read</span></p>
     </div>
   </div></div></div>
-<article class="wrap">
-  <div class="measure prose-top post">
+<article class="wrap post-layout">
+  <aside class="keyfacts" aria-labelledby="kf-h">
+    <h2 id="kf-h">Key numbers</h2>
+    <dl>
+      <div><dt>IPO price, Nov 18</dt><dd>$83.00</dd></div>
+      <div><dt>Close, Nov 20</dt><dd>$88.91</dd></div>
+      <div><dt>Market cap</dt><dd>$1.19T</dd></div>
+      <div><dt>Run-rate revenue, Oct 31</dt><dd>$81B</dd></div>
+      <div><dt>Market cap / run rate</dt><dd>15&#215;</dd></div>
+      <div><dt>Market cap / trailing revenue</dt><dd>34&#215;</dd></div>
+      <div><dt>Compute commitments</dt><dd>$900.9B</dd></div>
+      <div class="hl"><dt>Revenue needed (my test)</dt><dd>$159B</dd></div>
+    </dl>
+    <p class="note">The last line is my own estimate: 25&#215; earnings and a 30% net margin.</p>
+  </aside>
+  <div class="post">
     <p>Anthropic raised approximately $93.5 billion in the largest IPO in history. The company behind Claude priced its shares at $83 on November 18, 2026, and began trading on Nasdaq the following day under the ticker ANT.</p>
     <p>The offering implied a valuation of roughly $1.5 trillion on a fully diluted basis, although that figure included shares reserved for future equity awards.</p>
     <p>What interests me isn&#8217;t necessarily how much Anthropic raised. It&#8217;s whether the underlying business can eventually justify that valuation.</p>
@@ -40,15 +55,21 @@
 
     <h2>The cost of growth</h2>
     <p>Anthropic&#8217;s financials also show how expensive it is to compete in AI.</p>
-    <table>
-      <caption>Source: Anthropic&#8217;s final IPO prospectus.</caption>
-      <thead><tr><th>Financial metric</th><th class="num">9M 2025</th><th class="num">9M 2026</th></tr></thead>
-      <tbody>
-        <tr><td>Revenue</td><td class="num">$2.55B</td><td class="num">$33.24B</td></tr>
-        <tr><td>Compute and infrastructure expenses</td><td class="num">$4.38B</td><td class="num">$18.81B</td></tr>
-        <tr><td>Compute expenses / revenue</td><td class="num">172%</td><td class="num">57%</td></tr>
-      </tbody>
-    </table>
+    <figure class="bchart" aria-label="Revenue and compute costs, first nine months of 2025 and 2026">
+      <figcaption class="bchart-head"><strong>Revenue grew much faster than compute costs</strong><span>First nine months of each year, $ billions</span></figcaption>
+      <div class="bchart-legend" aria-hidden="true"><span><i class="sw sw-a"></i>Revenue</span><span><i class="sw sw-b"></i>Compute and infrastructure</span></div>
+      <div class="bchart-group">
+        <p class="bchart-glabel">9M 2025 <span>Compute = 172% of revenue</span></p>
+        <div class="bchart-row" title="Revenue, 9M 2025: $2.55B"><span class="bchart-track"><span class="bchart-bar sw-a" style="--w:7.7%"></span><span class="bchart-val">$2.55B</span></span></div>
+        <div class="bchart-row" title="Compute and infrastructure, 9M 2025: $4.38B"><span class="bchart-track"><span class="bchart-bar sw-b" style="--w:13.2%"></span><span class="bchart-val">$4.38B</span></span></div>
+      </div>
+      <div class="bchart-group">
+        <p class="bchart-glabel">9M 2026 <span>Compute = 57% of revenue</span></p>
+        <div class="bchart-row" title="Revenue, 9M 2026: $33.24B"><span class="bchart-track"><span class="bchart-bar sw-a" style="--w:100%"></span><span class="bchart-val">$33.24B</span></span></div>
+        <div class="bchart-row" title="Compute and infrastructure, 9M 2026: $18.81B"><span class="bchart-track"><span class="bchart-bar sw-b" style="--w:56.6%"></span><span class="bchart-val">$18.81B</span></span></div>
+      </div>
+      <p class="bchart-note">Source: Anthropic&#8217;s final IPO prospectus.</p>
+    </figure>
     <p>Revenue is growing considerably faster than compute expenses, which is encouraging. However, the improvement hasn&#8217;t been consistent. Compute gross margin declined from 52% in Q2 2026 to 42% in Q3, partly because Anthropic relied on more expensive short-term capacity.</p>
     <p>Profitability tells a similar story.</p>
     <p>For the first nine months of 2026, Anthropic reported an operating loss of $1.26 billion and a net loss of $104.04 billion. The enormous difference largely reflects $94.32 billion in fair-value charges related to convertible notes and other financial instruments.</p>
@@ -59,6 +80,15 @@
     <p>The most concerning figure in the prospectus, in my opinion, is Anthropic&#8217;s approximately $900.9 billion in purchase commitments and lease agreements, primarily related to computing infrastructure.</p>
     <p>Of that amount, <strong>$451.6 billion is expected to be incurred before the end of 2030</strong>, including $70.7 billion within the 12 months following September 30, 2026.</p>
     <p>For comparison, Anthropic estimated approximately $117 billion in combined net proceeds from its IPO and concurrent $26 billion private placement, including the full underwriters&#8217; option exercise.</p>
+    <figure class="bchart labeled" aria-label="Compute commitments compared with cash raised">
+      <figcaption class="bchart-head"><strong>Commitments dwarf the cash raised</strong><span>$ billions</span></figcaption>
+      <div class="bchart-legend" aria-hidden="true"><span><i class="sw sw-a"></i>Cash raised</span><span><i class="sw sw-b"></i>Commitments</span></div>
+      <div class="bchart-row" title="Net proceeds from IPO and private placement: about $117B"><span class="bchart-label">Net proceeds, IPO and placement</span><span class="bchart-track"><span class="bchart-bar sw-a" style="--w:13%"></span><span class="bchart-val">$117B</span></span></div>
+      <div class="bchart-row" title="Commitments due within 12 months of Sept 30, 2026: $70.7B"><span class="bchart-label">Due in the next 12 months</span><span class="bchart-track"><span class="bchart-bar sw-b" style="--w:7.8%"></span><span class="bchart-val">$70.7B</span></span></div>
+      <div class="bchart-row" title="Commitments expected before the end of 2030: $451.6B"><span class="bchart-label">Due before the end of 2030</span><span class="bchart-track"><span class="bchart-bar sw-b" style="--w:50.1%"></span><span class="bchart-val">$451.6B</span></span></div>
+      <div class="bchart-row" title="Total commitments through 2045: $900.9B"><span class="bchart-label">Total, through 2045</span><span class="bchart-track"><span class="bchart-bar sw-b" style="--w:100%"></span><span class="bchart-val">$900.9B</span></span></div>
+      <p class="bchart-note">Source: Anthropic&#8217;s final IPO prospectus. &#8220;Next 12 months&#8221; runs from September 30, 2026.</p>
+    </figure>
     <p>This doesn&#8217;t mean Anthropic faces an immediate funding shortfall. It already had substantial liquidity and expects to finance these commitments through revenue and additional capital.</p>
     <p>Still, the scale of these obligations creates a real risk. Anthropic is committing to infrastructure capacity years before knowing precisely how much demand will exist.</p>
     <p>If demand stays strong, that capacity could become a competitive advantage. If growth slows, the commitments could become a financial burden.</p>
@@ -82,6 +112,13 @@
     <p>At a 25&#215; earnings multiple and 30% net margin, Anthropic would need approximately $159 billion in annual revenue to support its current market capitalization.</p>
     <p>That&#8217;s nearly twice its October revenue run rate.</p>
     <p>And a 30% net margin is a demanding assumption for a company with substantial compute costs. At a 20% margin, required annual revenue increases to approximately $238 billion.</p>
+    <figure class="bchart labeled" aria-label="Revenue needed to support a $1.19 trillion market cap">
+      <figcaption class="bchart-head"><strong>What a $1.19 trillion market cap needs</strong><span>Annual revenue, $ billions, at a 25&#215; P/E</span></figcaption>
+      <div class="bchart-row" title="Run-rate revenue as of October 31, 2026: $81B"><span class="bchart-label">Run rate today</span><span class="bchart-track"><span class="bchart-bar sw-n" style="--w:34%"></span><span class="bchart-val">$81B</span></span></div>
+      <div class="bchart-row focus" title="Revenue needed at a 30% net margin: $159B"><span class="bchart-label">Needed at a 30% net margin</span><span class="bchart-track"><span class="bchart-bar sw-a" style="--w:66.8%"></span><span class="bchart-val">$159B <em>about 2&#215; today</em></span></span></div>
+      <div class="bchart-row" title="Revenue needed at a 20% net margin: $238B"><span class="bchart-label">Needed at a 20% net margin</span><span class="bchart-track"><span class="bchart-bar sw-a2" style="--w:100%"></span><span class="bchart-val">$238B</span></span></div>
+      <p class="bchart-note">Net income needed: $1.19T &#247; 25 = $47.6B. Revenue needed = net income &#247; margin.</p>
+    </figure>
     <p>This isn&#8217;t a price target or full DCF valuation. It&#8217;s a simplified test of how much future profitability investors are pricing in.</p>
 
     <h2>The circular financing risk</h2>
@@ -91,7 +128,7 @@
     <p>These relationships aren&#8217;t inherently problematic. Cloud marketplaces distribute Anthropic&#8217;s products to real customers. But when suppliers, investors, and distribution partners overlap, I think it&#8217;s especially important to understand the economics behind reported growth.</p>
     <p>There is also a revenue-quality consideration. Anthropic estimates that 5%&#8211;7% of its nine-month revenue came from customers violating its usage policies or commercial terms. Stricter enforcement could affect future growth.</p>
 
-    <h2>What would change my mind</h2>
+    <h2>What would change my mind?</h2>
     <p>I&#8217;d become more optimistic if Anthropic consistently reduced compute expenses below 50% of revenue, returned to sustained operating profitability, and maintained strong customer growth without relying on increasingly expensive capacity.</p>
     <p>Conversely, slowing revenue growth alongside deteriorating margins would make its current valuation much harder to justify.</p>
 
