@@ -404,3 +404,9 @@ details p { font-size: 1.02rem; }
   .bchart-val em { display: block; margin-left: 0; font-size: .82rem; }
   .bchart-row.focus .bchart-val { white-space: normal; }
 }
+
+/* About: headshot */
+.about-hero { grid-template-columns: minmax(0, 1fr) 14rem; }
+.portrait-frame img { display: block; width: 100%; height: auto; border-radius: 3px; border: 1px solid var(--board-rule); }
+@media (max-width: 900px) { .about-hero .portrait-frame { max-width: 9.5rem; } }
+@media (max-width: 900px) { .about-hero { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; } }
